@@ -3,7 +3,7 @@ BEGIN {
   $HTML::EasyForm::Field::AUTHORITY = 'cpan:GETTY';
 }
 BEGIN {
-  $HTML::EasyForm::Field::VERSION = '0.100';
+  $HTML::EasyForm::Field::VERSION = '0.101';
 }
 # ABSTRACT: Base field implementation
 
@@ -71,7 +71,7 @@ HTML::EasyForm::Field - Base field implementation
 
 =head1 VERSION
 
-version 0.100
+version 0.101
 
 =head1 AUTHOR
 

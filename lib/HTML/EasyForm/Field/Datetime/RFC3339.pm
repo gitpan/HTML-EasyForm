@@ -1,11 +1,11 @@
-package HTML::EasyForm::Field::Datetime;
+package HTML::EasyForm::Field::Datetime::RFC3339;
 BEGIN {
-  $HTML::EasyForm::Field::Datetime::AUTHORITY = 'cpan:GETTY';
+  $HTML::EasyForm::Field::Datetime::RFC3339::AUTHORITY = 'cpan:GETTY';
 }
 BEGIN {
-  $HTML::EasyForm::Field::Datetime::VERSION = '0.100';
+  $HTML::EasyForm::Field::Datetime::RFC3339::VERSION = '0.101';
 }
-# ABSTRACT: DateTime field
+# ABSTRACT: DateTime field based on RFC3339 formatting (with timezone)
 
 use Moose;
 extends 'HTML::EasyForm::Field';
@@ -13,7 +13,7 @@ extends 'HTML::EasyForm::Field';
 use DateTime::Format::RFC3339;
 
 has '+widget' => (
-	default => sub { 'datetime' },
+	default => sub { 'text' },
 );
 
 sub input_to_value {
@@ -32,11 +32,11 @@ __END__
 
 =head1 NAME
 
-HTML::EasyForm::Field::Datetime - DateTime field
+HTML::EasyForm::Field::Datetime::RFC3339 - DateTime field based on RFC3339 formatting (with timezone)
 
 =head1 VERSION
 
-version 0.100
+version 0.101
 
 =head1 AUTHOR
 

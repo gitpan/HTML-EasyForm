@@ -1,29 +1,21 @@
-package HTML::EasyForm::Field::Textarea;
+package HTML::EasyForm::Field::Hidden;
 BEGIN {
-  $HTML::EasyForm::Field::Textarea::AUTHORITY = 'cpan:GETTY';
+  $HTML::EasyForm::Field::Hidden::AUTHORITY = 'cpan:GETTY';
 }
 BEGIN {
-  $HTML::EasyForm::Field::Textarea::VERSION = '0.101';
+  $HTML::EasyForm::Field::Hidden::VERSION = '0.101';
 }
-# ABSTRACT: Textarea field
+# ABSTRACT: Hidden field
 
 use Moose;
 extends 'HTML::EasyForm::Field';
 
 has '+widget' => (
-	default => sub { 'textarea' },
+	default => sub { 'hidden' },
 );
 
-has cols => (
-	isa => 'Int',
-	is => 'rw',
-	predicate => 'has_cols',
-);
-
-has rows => (
-	isa => 'Int',
-	is => 'rw',
-	predicate => 'has_rows',
+has '+full' => (
+	default => sub { 1 },
 );
 
 1;
@@ -32,7 +24,7 @@ __END__
 
 =head1 NAME
 
-HTML::EasyForm::Field::Textarea - Textarea field
+HTML::EasyForm::Field::Hidden - Hidden field
 
 =head1 VERSION
 

@@ -3,7 +3,7 @@ BEGIN {
   $HTML::EasyForm::AUTHORITY = 'cpan:GETTY';
 }
 BEGIN {
-  $HTML::EasyForm::VERSION = '0.100';
+  $HTML::EasyForm::VERSION = '0.101';
 }
 # ABSTRACT: Using the demon core to deliver a HTML orientated form management concept
 
@@ -76,7 +76,6 @@ has id => (
 sub _build_default_field_class { 'HTML::EasyForm::Field' }
 
 has '+field_namespace' => (
-	lazy => 1,
 	default => sub { 'HTML::EasyForm::Field' },
 );
 
@@ -92,7 +91,7 @@ HTML::EasyForm - Using the demon core to deliver a HTML orientated form manageme
 
 =head1 VERSION
 
-version 0.100
+version 0.101
 
 =head1 SYNOPSIS
 
@@ -110,17 +109,19 @@ In your L<Template::Toolkit> configuration:
 In your favorite web framework:
 
   $c->stash->{form} = HTML::EasyForm->easy({
-    name => 'test',
-      fields => {
-      name => {
+    name => 'testform',
+    fields => [
+      {
+        name => 'testfield',
         notempty => 1,
-        widget => 'text',
-        label => 'Name of new site',
       },
+    ],
+    input_values => {
+      testform => 1,
+      testform_testfield => "test",
     },
-    input_values => $c->req->params,
+	session => $c->session,
   });
-
   if (my $result = $c->stash->{form}->result) {
     ... do stuff with $result ...
   }

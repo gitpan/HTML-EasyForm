@@ -22,7 +22,7 @@ requires:
 resources:
   homepage: http://github.com/Getty/p5-html-easyform
   repository: http://github.com/Getty/p5-html-easyform
-version: 0.100
+version: 0.101
 x_Dist_Zilla:
   plugins:
     -

@@ -9,7 +9,9 @@ dist.ini
 lib/HTML/EasyForm.pm
 lib/HTML/EasyForm/Field.pm
 lib/HTML/EasyForm/Field/Checkbox.pm
-lib/HTML/EasyForm/Field/Datetime.pm
+lib/HTML/EasyForm/Field/Datetime/RFC3339.pm
+lib/HTML/EasyForm/Field/Hidden.pm
+lib/HTML/EasyForm/Field/Password.pm
 lib/HTML/EasyForm/Field/Text.pm
 lib/HTML/EasyForm/Field/Textarea.pm
 share/templates_tt/form.tt
