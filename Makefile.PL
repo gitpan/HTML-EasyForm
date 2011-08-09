@@ -4,20 +4,20 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 use File::ShareDir::Install;
 install_share dist => "share";
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'A wrapper for HTML::FormHandler, trying to be a different default handling',
+  'ABSTRACT' => 'Using the demon core to deliver a HTML orientated form management concept',
   'AUTHOR' => 'Torsten Raudssus <torsten@raudssus.de>',
   'BUILD_REQUIRES' => {
     'Test::More' => '0.96'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31',
+    'ExtUtils::MakeMaker' => '6.30',
     'File::ShareDir::Install' => '0.03'
   },
   'DISTNAME' => 'HTML-EasyForm',
@@ -25,10 +25,12 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'HTML::EasyForm',
   'PREREQ_PM' => {
+    'DateTime::Format::RFC3339' => '1.0.5',
     'File::ShareDir::ProjectDistDir' => '0',
-    'HTML::FormHandler' => '0.33002'
+    'Form::DemonCore' => '0',
+    'Moose' => '2.0202'
   },
-  'VERSION' => '0.001',
+  'VERSION' => '0.100',
   'test' => {
     'TESTS' => 't/*.t'
   }
